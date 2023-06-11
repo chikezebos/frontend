@@ -168,25 +168,9 @@ function App() {
     }
   };
 
-  const appStyle = {
-    backgroundColor: "#189ad3", // Set the sparkling blue background color
-    padding: "20px", // Add padding to the app container
-  };
-
-  const headerStyle = {
-    textAlign: "center", // Center align the header text
-  };
-
-  const footerStyle = {
-    textAlign: "center", // Center align the footer text
-    marginTop: "auto", // Push the footer to the bottom of the page
-    padding: "10px", // Add padding to the footer
-    backgroundColor: "#f8f8f8", // Set the desired background color for the footer
-  };
-
   return (
-    <div style={appStyle}>
-      <header style={headerStyle}>
+    <div className="container" style={{ backgroundColor: '#87CEFA' }}>
+      <header>
         <h1>Crypto Monitor</h1>
       </header>
       <div className="row mt-5">
@@ -204,8 +188,8 @@ function App() {
           </div>
         ))}
       </div>
-      <footer style={footerStyle}>
-        <p>Designed by Stanley Okafor for Chainlink Spring 2023 Hackathon</p>
+      <footer className="footer mt-auto py-3">
+        <p className="text-center">Designed by Stanley Okafor for Chainlink Spring 2023 Hackathon</p>
       </footer>
     </div>
   );
