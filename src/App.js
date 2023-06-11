@@ -80,7 +80,9 @@ function App() {
       const tokensData = await Promise.all(
         tokensList.map(async (tokenSymbol) => {
           const tokenData = await contract.methods.tokens(tokenSymbol).call();
-          return { symbol: tokenSymbol, price: parseInt(tokenData.storedPrice) / 100000000 };
+          const storedPrice = BigInt(tokenData.storedPrice);
+          const price = storedPrice / BigInt(100000000); // BigInt division
+          return { symbol: tokenSymbol, price: Number(price) }; // Convert to number
         })
       );
       setTokens(tokensData);
